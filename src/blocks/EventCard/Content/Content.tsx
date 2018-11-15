@@ -1,3 +1,4 @@
+import {cn} from "@bem-react/classname";
 import * as React from "react";
 import AudioPlayer from "../../AudioPlayer/AudioPlayer";
 import DialogButton from "../../DialogButton/DialogButton";
@@ -30,7 +31,7 @@ const Content = (props: IContent) => (
     {
       props.icon === "stats" &&
       <div className="Event-Image">
-        <img src="assets/Richdata.svg" />
+        <img src="assets/Richdata.svg"/>
       </div>
     }
     {
@@ -39,7 +40,7 @@ const Content = (props: IContent) => (
         <img src="assets/robot-cleaner.png"
              srcSet="assets/robot-cleaner@3x.png 3x,
                         assets/robot-cleaner@2x.png 2x,
-                        assets/robot-cleaner.png 1x" />
+                        assets/robot-cleaner.png 1x"/>
       </div>
     }
     {
@@ -47,16 +48,17 @@ const Content = (props: IContent) => (
       <AudioPlayer albumcover={props.data.albumcover}
                    artist={props.data.artist}
                    track={props.data.track}
-                   volume={props.data.volume} />
+                   volume={props.data.volume}/>
     }
     {
       (props.data && props.data.buttons) &&
       <div className="Event-DialogBtns">
-        {props.data.buttons.map((button:string, i:number) =>
-          <DialogButton key={i}  name={button}>
-            {props.data.buttons[i]}
-          </DialogButton>)}
-        {/*<button className="dialog-btn secondary">{props.data.buttons[i]}</button>*/}
+        {
+          props.data.buttons.map((button: string, i: number) => {
+            const className = cn("DialogButton")({priority: i===0 ? "primary": "secondary"});
+            return <DialogButton key={i} className={className} text={button}/>
+          })
+        }
       </div>
     }
   </div>

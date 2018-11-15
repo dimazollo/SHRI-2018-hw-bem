@@ -1,17 +1,19 @@
-import { cn } from "@bem-react/classname";
-// import { withBemMod } from "@bem-react/core";
+import { compose } from "@bem-react/core";
 import * as React from "react";
+
+import { DialogButtonPriorityPrimary, DialogButtonPrioritySecondary } from "./_priority";
+import IDialogButtonProps from "./IDialogButtonProps";
 
 import "./DialogButton.css";
 
-const cnDialogButton = cn("DialogButton");
 
-interface IDialogButtonProp {
-  name: string;
-}
+const DialogButton = ({text, className}:IDialogButtonProps) => {
+  return (
+    <button type="button" className={className}>{text}</button>
+  );
+};
 
-const DialogButton = (props: IDialogButtonProp) => (
-  <button className={cnDialogButton({priority: "primary"})}>{props.name}</button>
-);
-
-export default DialogButton;
+export default compose(
+  DialogButtonPriorityPrimary,
+  DialogButtonPrioritySecondary
+)(DialogButton);
