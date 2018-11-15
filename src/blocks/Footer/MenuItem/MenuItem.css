@@ -1,0 +1,12 @@
+.Footer-MenuItem {
+  line-height: 1.4em;
+  white-space: nowrap;
+  padding-right: 5px;
+  text-decoration: none;
+  color: #858585;
+}
+
+.Footer-MenuItem:hover {
+  opacity: 1;
+  color: #cc0000;
+}

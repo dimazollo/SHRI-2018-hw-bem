@@ -1,0 +1,106 @@
+.EventsBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.EventsBoard-Container {
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+
+  padding-left: 30px;
+  padding-right: 30px;
+
+  margin: 0 auto 80px;
+}
+
+.EventsBoard-Header {
+  margin-top: 34px;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: bold;
+}
+
+.EventsBoard-Grid {
+  margin-top: 32px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-auto-flow: dense;
+  grid-gap: 20px 20px;
+}
+
+@media screen and (max-width: 940px) {
+  .EventsBoard-Grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .EventsGrid-Event_size_medium {
+    grid-area: span 2 / span 2
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+  .EventsBoard-Header {
+    font-size: 24px;
+  }
+
+  .EventsGrid-Event_size_medium {
+    grid-area: span 2 / span 4
+  }
+
+  .Header-Text {
+    font-size: 14px;
+  }
+
+  .Header-Icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .Header-Icon > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Header-Status {
+    font-size: 12px;
+  }
+
+  .EventsGrid-Event_size_small .Event-DialogBtns,
+  .EventsGrid-Event_size_medium .Event-DialogBtns,
+  .EventsGrid-Event_size_large .Event-DialogBtns {
+    justify-content: space-between;
+  }
+
+  .EventsGrid-Event_size_small .Event-Description,
+  .EventsGrid-Event_size_medium .Event-Description,
+  .EventsGrid-Event_size_large .Event-Description {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .EventsBoard-Grid {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+  }
+
+  .EventsGrid-Event_size_large,
+  .EventsGrid-Event_size_medium,
+  .EventsGrid-Event_size_small {
+    grid-area: span 1 / span 1;
+  }
+}
+
+@media screen and (min-width: 1580px) {
+  .EventsBoard-Container {
+    max-width: 1800px;
+  }
+
+  .EventsBoard-Grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}

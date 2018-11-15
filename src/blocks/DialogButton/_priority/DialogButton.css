@@ -1,0 +1,36 @@
+.DialogButton {
+  border: none;
+  background: none;
+  line-height: normal;
+
+  transition: .15s ease;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px 0 20px;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+}
+
+.DialogButton:focus,
+.DialogButton:active {
+  outline: none;
+}
+
+.DialogButton:hover,
+.DialogButton_priority_primary:hover,
+.DialogButton_priority_secondary:hover {
+  background-color: #FFCD00;
+}
+
+.DialogButton_priority_primary {
+  background-color: #FFD93E;
+}
+
+.DialogButton_priority_secondary {
+  background-color: #E5E5E5;
+}

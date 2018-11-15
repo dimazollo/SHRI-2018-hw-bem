@@ -1,0 +1,35 @@
+.Footer {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px 0 40px;
+  font-size: 12px;
+  border-top: 1px solid #F0F0F0;
+}
+
+@media screen and (max-width: 576px) {
+  .Footer {
+    height: 100px;
+    padding: 10px 20px;
+  }
+
+  .Footer-FooterMenu {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 24px 24px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .Footer-Copyright {
+    white-space: nowrap;
+    color: #858585;
+  }
+}

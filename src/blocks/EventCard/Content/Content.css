@@ -1,0 +1,34 @@
+.EventsGrid-Event_size_large .Event-Description {
+  font-size: 24px;
+}
+
+.EventsGrid-Event_size_medium .Event-Description {
+  font-size: 20px;
+  color: #000000;
+}
+
+.EventsGrid-Event_size_small .Event-Description {
+  font-size: 20px;
+  color: #000000;
+}
+
+.Event-Description {
+  font-size: 24px;
+}
+
+.Event-Status {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-gap: 10px 8px;
+}
+
+.Event-Status .Event-Param {
+  font-size: 18px;
+}
+
+.Event-Status .Event-ParamValue {
+  font-weight: bold;
+}
+
+.Event-Status .Event-ParamName {
+}

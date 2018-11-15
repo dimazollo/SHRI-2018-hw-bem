@@ -1,0 +1,6 @@
+.Footer-FooterMenu {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
