@@ -1,23 +1,22 @@
+import { cn } from "@bem-react/classname";
 import * as React from "react";
-import { ISmartHouseEvent } from "../../interfaces/interfaces";
 import EventCard from "../EventCard/EventCard";
+import { IEventsBoardProps } from "./IEventsBoardProps";
 
 import "./EventsBoard.css";
 
 
-interface IEventsBoard {
-  events: ISmartHouseEvent[]
-}
+const cnEventsBoard = cn("EventsBoard");
 
-class EventsBoard extends React.Component<IEventsBoard> {
+class EventsBoard extends React.Component<IEventsBoardProps> {
   public render() {
     return (
-      <div className="EventsBoard">
-        <div className="EventsBoard-Container">
-          <div className="EventsBoard-Header">Лента событий</div>
-          <div className="EventsBoard-Grid">
-            {/* Event tiles should be inserted here */}
-            { this.props.events.map(eventData => <EventCard key={eventData.id} {...eventData}/>) }
+      <div className={cnEventsBoard()}>
+        <div className={cnEventsBoard("Container")}>
+          <div className={cnEventsBoard("Header")}>Лента событий</div>
+          <div className={cnEventsBoard("Grid")}>
+            { this.props.events.map(eventData =>
+              <EventCard key={eventData.id} {...eventData}/>) }
           </div>
         </div>
       </div>

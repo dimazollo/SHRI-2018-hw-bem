@@ -1,5 +1,5 @@
 import ILink from "../../Link/ILink";
 
-export default interface IFooterMenu {
+export default interface IFooterMenuProps {
   menuItems: ILink[]
 }

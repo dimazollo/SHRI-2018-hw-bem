@@ -1,18 +1,17 @@
 import * as React from "react";
-import MenuItem from "../MenuItem/MenuItem";
-import IFooterMenu from "./IFooterMenu";
+import FooterMenuItem from "../MenuItem/Footer-MenuItem";
+import IFooterMenuProps from "./IFooterMenuProps";
 
-import "./FooterMenu.css";
+import "./Footer-Menu.css";
 
 
-export default class FooterMenu extends React.Component<IFooterMenu> {
-
+export default class FooterMenu extends React.Component<IFooterMenuProps> {
   public render() {
     return (
-      <ul className="Footer-FooterMenu">
+      <ul className="Footer-Menu">
         {
           this.props.menuItems.map(item => (
-            <MenuItem
+            <FooterMenuItem
               key={item.text}
               href={item.href}
               download={item.download}

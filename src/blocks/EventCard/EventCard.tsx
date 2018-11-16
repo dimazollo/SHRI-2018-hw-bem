@@ -1,8 +1,8 @@
 // import { cn, classnames } from "@bem-react/classname";
 import * as React from "react";
-import {ISmartHouseEvent} from "../../interfaces/interfaces";
-import Content from "./Content/Content";
-import Header from "./Header/Header";
+import { ISmartHouseEvent } from "../../interfaces/interfaces";
+import EventCardContent from "./Content/EventCard-Content";
+import EventCardHeader from "./Header/EventCard-Header";
 
 import "./EventCard.css";
 
@@ -32,14 +32,14 @@ class EventCard extends React.Component<ISmartHouseEvent> {
           <img src="assets/icons/goto-black.svg" alt="Перейти к событию"/>
         </div>
 
-        <Header icon={this.props.icon}
-                title={this.props.title}
-                source={this.props.source}
-                time={this.props.time}
-                iconColor={iconColor}/>
+        <EventCardHeader icon={this.props.icon}
+                         title={this.props.title}
+                         source={this.props.source}
+                         time={this.props.time}
+                         iconColor={iconColor}/>
         {
           hasContent &&
-          <Content
+          <EventCardContent
             description={this.props.description}
             icon={this.props.icon}
             data={this.props.data}/>

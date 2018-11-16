@@ -1,15 +1,13 @@
+import { cn } from "@bem-react/classname";
 import * as React from "react";
-
-import ILink from "../Link/ILink";
-import Copyright from "./Copyright/Copyright";
-import FooterMenu from "./FooterMenu/FooterMenu";
+import FooterCopyright from "./Copyright/Footer-Copyright";
+import FooterMenu from "./FooterMenu/Footer-Menu";
+import { IFooterState } from "./IFooter";
 
 import "./Footer.css";
 
 
-interface IFooterState {
-  menuItems: ILink[];
-}
+const cnFooter = cn("Footer");
 
 class Footer extends React.Component<{}, IFooterState> {
   public readonly state = {
@@ -24,9 +22,9 @@ class Footer extends React.Component<{}, IFooterState> {
 
   public render() {
     return (
-      <footer className="Footer">
+      <footer className={cnFooter()}>
         <FooterMenu menuItems={this.state.menuItems}/>
-        <Copyright />
+        <FooterCopyright />
       </footer>
     );
   }

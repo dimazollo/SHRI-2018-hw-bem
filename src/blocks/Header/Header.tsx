@@ -1,25 +1,32 @@
+import { cn } from "@bem-react/classname";
 import * as React from 'react';
+import { IHeaderState } from "./IHeader";
 
 import "./Header.css";
 
 
-class Header extends React.Component {
+const cnHeader = cn("Header");
+
+class Header extends React.Component<{}, IHeaderState> {
+  public readonly state = {
+    menuItems: ["События", "Сводка", "Устройства", "Сценарии"]
+  };
+
   public render() {
     return (
-      <div className="Header">
-        <header className="Header-Content">
-          <div className="Header-Logo">
+      <div className={cnHeader()}>
+        <header className={cnHeader("Content")}>
+          <div className={cnHeader("Logo")}>
             <img src="assets/yandex_house.svg" alt="Яндекс Дом"/>
           </div>
-          <div className="Header-MenuToggle">
+          <div className={cnHeader("MenuToggle")}>
             <img src="assets/icons/icon_list_m.svg" alt="Menu"/>
           </div>
           <nav>
-            <ul className="Header-HeaderMenu">
-              <li className="HeaderMenu-MenuItem HeaderMenu-MenuItem_active">События</li>
-              <li className="HeaderMenu-MenuItem">Сводка</li>
-              <li className="HeaderMenu-MenuItem">Устройства</li>
-              <li className="HeaderMenu-MenuItem">Сценарии</li>
+            <ul className={cnHeader("Menu")}>
+              {this.state.menuItems.map((item, i) => (
+                <li key={item} className={cnHeader("MenuItem", {active: i === 0})}>{item}</li>
+              ))}
             </ul>
           </nav>
         </header>

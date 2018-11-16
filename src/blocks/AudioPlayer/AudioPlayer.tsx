@@ -1,28 +1,31 @@
+import { cn } from "@bem-react/classname";
 import * as React from "react";
 import IAudioPlayer from "./IAudioPlayer";
 
 import "./AudioPlayer.css";
 
+const cnAudioPlayer = cn("AudioPlayer");
+
 
 const AudioPlayer = (props: IAudioPlayer) => (
-  <div className="player">
-    <div className="player__first-line">
-      <div className="player__albumcover"><img src={props.albumcover} /></div>
-      <div className="player__right-block">
-        <div className="player__track">{props.artist + ' - ' + props.track.name}</div>
-        <div className="player__bottom-part">
-          <input type="range" className="player__time-range" />
-          <div className="player__length">{props.track.length}</div>
+  <div className={cnAudioPlayer()}>
+    <div className={cnAudioPlayer("FirstLine")}>
+      <div className={cnAudioPlayer("AlbumCover")}><img src={props.albumcover} /></div>
+      <div className={cnAudioPlayer("RightPart")}>
+        <div className={cnAudioPlayer("Track")}>{props.artist + ' - ' + props.track.name}</div>
+        <div className={cnAudioPlayer("BottomPart")}>
+          <input type="range" className={cnAudioPlayer("TimeRange")} />
+          <div className={cnAudioPlayer("Length")}>{props.track.length}</div>
         </div>
       </div>
     </div>
-    <div className="player__second-line">
-      <div className="player__buttons">
+    <div className={cnAudioPlayer("SecondLine")}>
+      <div className={cnAudioPlayer("Buttons")}>
         <img src="assets/icons/Prev.svg" />
         <img src="assets/icons/Next.svg" />
       </div>
-      <input type="range" className="player__volume-range" />
-      <div className="player__volume">{props.volume}%</div>
+      <input type="range" className={cnAudioPlayer("VolumeRange")} />
+      <div className={cnAudioPlayer("Volume")}>{props.volume}%</div>
     </div>
   </div>
 );

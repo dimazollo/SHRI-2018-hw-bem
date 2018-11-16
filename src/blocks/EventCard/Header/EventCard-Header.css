@@ -1,0 +1,36 @@
+.Header-Title {
+  display: flex;
+  align-items: center;
+}
+
+.Header-Text {
+  font-size: 24px;
+  font-weight: bold;
+  max-height: 56px;
+  overflow: hidden;
+}
+
+.Header-Icon {
+  width: 52px;
+  height: 52px;
+  margin-right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Header-Status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-size: 18px;
+  margin-top: 13px;
+}
+
+.Header-Source {
+  margin-right: 10px;
+}
+
+.Header-Datetime {
+}

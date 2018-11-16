@@ -1,4 +1,4 @@
-export default interface IHeader {
+export default interface IEventCardHeaderProps {
   icon: string;
   title: string;
   source: string;

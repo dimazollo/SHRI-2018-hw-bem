@@ -1,4 +1,4 @@
-.player__right-block {
+.AudioPlayer-RightPart {
   flex: 1 1 auto;
   overflow: hidden;
   display: flex;
@@ -6,20 +6,20 @@
   justify-content: space-evenly;
 }
 
-.player__albumcover {
+.AudioPlayer-AlbumCover {
   width: 52px;
   height: 52px;
   flex: 0 0 auto;
   margin-right: 16px;
 }
 
-.player__albumcover > img {
+.AudioPlayer-AlbumCover > img {
   width: 100%;
   height: 100%;
   border-radius: 15%;
 }
 
-.player__track {
+.AudioPlayer-Track {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -27,13 +27,13 @@
   color: #000000;
 }
 
-.player__length {
+.AudioPlayer-Length {
   margin-left: 16px;
   font-size: 14px;
   color: #A1A1A1;
 }
 
-.player__volume-range {
+.AudioPlayer-VolumeRange {
   position: relative;
   -webkit-appearance: none;
   width: 100%;
@@ -42,11 +42,11 @@
   background-color: rgba(216, 216, 216, 0.30);
 }
 
-.player__volume-range:focus {
+.AudioPlayer-VolumeRange:focus {
   outline: none;
 }
 
-.player__volume-range::-webkit-slider-thumb {
+.AudioPlayer-VolumeRange::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #605757;
   border-radius: 50%;
@@ -56,7 +56,7 @@
   margin-top: 0;
 }
 
-.player__volume-range::-moz-range-thumb {
+.AudioPlayer-VolumeRange::-moz-range-thumb {
   background-color: #605757;
   height: 16px;
   width: 16px;
@@ -64,7 +64,7 @@
   cursor: pointer;
 }
 
-.player__time-range {
+.AudioPlayer-TimeRange {
   position: relative;
   -webkit-appearance: none;
   width: 100%;
@@ -72,11 +72,11 @@
   background-color: #979797;
 }
 
-.player__time-range:focus {
+.AudioPlayer-TimeRange:focus {
   outline: none;
 }
 
-.player__time-range::-webkit-slider-thumb {
+.AudioPlayer-TimeRange::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #D8D8D8;
   border-radius: 4.5px;
@@ -86,7 +86,7 @@
   margin-top: 0;
 }
 
-.player__time-range::-moz-range-thumb {
+.AudioPlayer-TimeRange::-moz-range-thumb {
   background-color: #D8D8D8;
   height: 20px;
   width: 12px;
@@ -94,32 +94,32 @@
   cursor: pointer;
 }
 
-.player__first-line {
+.AudioPlayer-FirstLine {
   display: flex;
   margin-bottom: 20px;
 }
 
-.player__second-line {
+.AudioPlayer-SecondLine {
   display: flex;
   align-items: center;
 }
 
-.player__bottom-part {
+.AudioPlayer-BottomPart {
   display: flex;
   align-items: center;
 }
 
-.player__volume {
+.AudioPlayer-Volume {
   font-size: 14px;
   color: #A1A1A1;
   margin-left: 20px;
 }
 
-.player__buttons {
+.AudioPlayer-Buttons {
   flex: 1 0 auto;
   margin-right: 15px;
 }
 
-.player__buttons > img:first-child {
+.AudioPlayer-Buttons > img:first-child {
   margin-right: 27px;
 }
