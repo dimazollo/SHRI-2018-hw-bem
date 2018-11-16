@@ -7,7 +7,7 @@ import IEventCardContentProps from "./IEventCardContentProps";
 import "./EventCard-Content.css";
 
 
-const cnEvent = cn("Event");
+const cnEvent = cn("EventCard");
 
 const EventCardContent = (props: IEventCardContentProps) => (
   <div className={cnEvent("Content")}>

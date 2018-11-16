@@ -1,34 +1,55 @@
-.EventsGrid-Event_size_large .Event-Description {
+.EventsGrid-EventCard_size_large .EventCard-Description {
   font-size: 24px;
 }
 
-.EventsGrid-Event_size_medium .Event-Description {
+.EventsGrid-EventCard_size_medium .EventCard-Description {
   font-size: 20px;
   color: #000000;
 }
 
-.EventsGrid-Event_size_small .Event-Description {
+.EventsGrid-EventCard_size_small .EventCard-Description {
   font-size: 20px;
   color: #000000;
 }
 
-.Event-Description {
+.EventCard-Description {
   font-size: 24px;
 }
 
-.Event-Status {
+.EventCard-Status {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   grid-gap: 10px 8px;
 }
 
-.Event-Status .Event-Param {
+.EventCard-Status .Event-Param {
   font-size: 18px;
 }
 
-.Event-Status .Event-ParamValue {
+.EventCard-Status .Event-ParamValue {
   font-weight: bold;
 }
 
-.Event-Status .Event-ParamName {
+.EventCard-Status .Event-ParamName {
+}
+
+.EventCard-Content > * {
+  margin-bottom: 20px;
+}
+
+.EventCard-Content > *:last-child {
+  margin-bottom: 0;
+}
+
+.EventCard-Content {
+  transition: .15s ease;
+
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
 }

@@ -1,4 +1,4 @@
-.EventsGrid-Event {
+.EventsGrid-EventCard {
   position: relative;
   background-color: #FAFAFA;
   min-height: 100px;
@@ -11,29 +11,29 @@
   transition: .15s ease;
 }
 
-.EventsGrid-Event:hover {
+.EventsGrid-EventCard:hover {
   box-shadow: 0 2px 6px 0 #C5BABA;
   background-color: #F3F3F3;
 }
 
-.EventsGrid-Event:hover .Event-ControlBtn_position_top,
-.EventsGrid-Event:hover .Event-ControlBtn_position_bottom {
+.EventsGrid-EventCard:hover .EventCard-ControlBtn_position_top,
+.EventsGrid-EventCard:hover .EventCard-ControlBtn_position_bottom {
   opacity: 1.0;
 }
 
-.EventsGrid-Event:hover .Event-Content {
+.EventsGrid-EventCard:hover .EventCard-Content {
   background-color: #F3F3F3;
 }
 
 /* Модификаторы */
-.EventsGrid-Event_size_large {
+.EventsGrid-EventCard_size_large {
   grid-column: span 4;
   grid-row: span 3;
 }
 
 
 
-.EventsGrid-Event_size_medium {
+.EventsGrid-EventCard_size_medium {
   grid-column: span 3;
   grid-row: span 2;
 
@@ -42,32 +42,33 @@
 
 
 /* modifiers related to tile size */
-.EventsGrid-Event_size_small {
+.EventsGrid-EventCard_size_small {
   grid-column: span 2;
   grid-row: span 1;
 }
 
-.EventsGrid-Event_size_small .Header-Status {
+.EventsGrid-EventCard_size_small .Header-Status {
   flex-direction: column;
   align-items: flex-start;
 }
 
-.EventsGrid-Event_size_small .Header-Source {
+.EventsGrid-EventCard_size_small .Header-Source {
   margin-bottom: 20px;
 }
 
 
 
-.EventsGrid-Event.critical {
+.EventsGrid-EventCard_critical,
+.EventsGrid-EventCard_critical:hover{
   background-color: #DB5341;
 }
 
-.EventsGrid-Event.critical .Event-Header {
+.EventsGrid-EventCard_critical .EventCard-Header {
   color: white;
   padding-bottom: 20px;
 }
 
-.Event-ControlBtn {
+.EventCard-ControlBtn {
   transition: .15s ease;
   position: absolute;
   top: 24px;
@@ -87,74 +88,54 @@
   border: 1px solid rgba(210, 210, 210, 0.9);
 }
 
-.Event-ControlBtn > img {
+.EventCard-ControlBtn > img {
   width: 100%;
   height: 100%;
 }
 
-.Event-ControlBtn_position_top {
+.EventCard-ControlBtn_position_top {
   top: 24px;
 }
 
-.Event-ControlBtn_position_bottom {
+.EventCard-ControlBtn_position_bottom {
   top: unset;
   bottom: 24px;
 }
 
-.Event-ControlBtn_position_bottom > img {
+.EventCard-ControlBtn_position_bottom > img {
   position: relative;
   left: 1px;
 }
 
-.Event-Header {
+.EventCard-Header {
   transition: .15s ease;
   padding: 20px 20px 5px 20px;
 }
 
-.Event-Content > * {
-  margin-bottom: 20px;
-}
 
-.Event-Content > *:last-child {
-  margin-bottom: 0;
-}
-
-.Event-Content {
-  transition: .15s ease;
-
-  flex: 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #FAFAFA;
-}
-
-.Event-Image > img {
+.EventCard-Image > img {
   border-radius: 20px;
   width: 100%;
   height: 100%;
 }
 
-.Event-Player {
+.EventCard-Player {
 }
 
-.Event-DialogBtns {
+.EventCard-DialogBtns {
   display: grid;
   grid-template: 54px / repeat(2, minmax(132px, min-content));
   grid-gap: 0 18px;
 }
 
 @media screen and (max-width: 940px) {
-  .EventsGrid-Event_size_medium {
+  .EventsGrid-EventCard_size_medium {
     grid-area: span 2 / span 2
   }
 }
 
 @media screen and (max-width: 720px) {
-  .EventsGrid-Event_size_medium {
+  .EventsGrid-EventCard_size_medium {
     grid-area: span 2 / span 4
   }
 
@@ -176,23 +157,23 @@
     font-size: 12px;
   }
 
-  .EventsGrid-Event_size_small .Event-DialogBtns,
-  .EventsGrid-Event_size_medium .Event-DialogBtns,
-  .EventsGrid-Event_size_large .Event-DialogBtns {
+  .EventsGrid-EventCard_size_small .EventCard-DialogBtns,
+  .EventsGrid-EventCard_size_medium .EventCard-DialogBtns,
+  .EventsGrid-EventCard_size_large .EventCard-DialogBtns {
     justify-content: space-between;
   }
 
-  .EventsGrid-Event_size_small .Event-Description,
-  .EventsGrid-Event_size_medium .Event-Description,
-  .EventsGrid-Event_size_large .Event-Description {
+  .EventsGrid-EventCard_size_small .EventCard-Description,
+  .EventsGrid-EventCard_size_medium .EventCard-Description,
+  .EventsGrid-EventCard_size_large .EventCard-Description {
     font-size: 18px;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .EventsGrid-Event_size_large,
-  .EventsGrid-Event_size_medium,
-  .EventsGrid-Event_size_small {
+  .EventsGrid-EventCard_size_large,
+  .EventsGrid-EventCard_size_medium,
+  .EventsGrid-EventCard_size_small {
     grid-area: span 1 / span 1;
   }
 }

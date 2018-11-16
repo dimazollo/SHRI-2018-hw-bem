@@ -9,7 +9,7 @@ const cnHeader = cn("Header");
 
 const EventCardHeader = (props: IEventCardHeader) => {
   return (
-    <div className={cn("Event", "Header")()}>
+    <div className={cn("EventCard", "Header")()}>
       <div className={cnHeader("Title")}>
         <div className={cnHeader("Icon")}>
           <img src={"assets/icons/" + props.icon + "-" + props.iconColor + ".svg"}/>

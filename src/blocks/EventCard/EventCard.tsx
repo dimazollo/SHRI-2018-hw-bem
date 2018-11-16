@@ -1,4 +1,4 @@
-// import { cn, classnames } from "@bem-react/classname";
+import { cn } from "@bem-react/classname";
 import * as React from "react";
 import { ISmartHouseEvent } from "../../interfaces/interfaces";
 import EventCardContent from "./Content/EventCard-Content";
@@ -6,7 +6,7 @@ import EventCardHeader from "./Header/EventCard-Header";
 
 import "./EventCard.css";
 
-// const cnEventCard = cn('EventCard');
+const cnEventCard = cn('EventCard');
 
 
 class EventCard extends React.Component<ISmartHouseEvent> {
@@ -16,19 +16,19 @@ class EventCard extends React.Component<ISmartHouseEvent> {
     const hasContent = Boolean(this.props.data || this.props.description);
 
     const tileSizeStyleMap: { [key: string]: string } = {
-      l: 'EventsGrid-Event_size_large',
-      m: 'EventsGrid-Event_size_medium',
-      s: 'EventsGrid-Event_size_small',
+      l: 'large',
+      m: 'medium',
+      s: 'small',
     };
-    const sizeStyle: string = tileSizeStyleMap[this.props.size];
+    const sizeMod: string = tileSizeStyleMap[this.props.size];
 
 
     return (
-      <div className={"EventsGrid-Event " + (sizeStyle) + (isCritical ? " critical" : "")}>
-        <div className="Event-ControlBtn Event-ControlBtn_position_top">
+      <div className={cn("EventsGrid", "EventCard")({size: sizeMod, critical: isCritical})}>
+        <div className={cnEventCard("ControlBtn", {position: "top"})}>
           <img src="assets/icons/cross-black.svg" alt="Закрыть событие"/>
         </div>
-        <div className="Event-ControlBtn Event-ControlBtn_position_bottom">
+        <div className={cnEventCard("ControlBtn", {position: "bottom"})}>
           <img src="assets/icons/goto-black.svg" alt="Перейти к событию"/>
         </div>
 
